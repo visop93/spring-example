@@ -3,12 +3,21 @@ package com.example.springexample;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
 public class Item {
+
     private @Id @GeneratedValue Long id;
+
+    @NotNull
+    @Size(min=2, max=10)
     private String name;
+
+    @NotNull
+    @Size(min=5, max=20)
     private String role;
 
     public Item() {
