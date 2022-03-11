@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Example project. Item Added.</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -13,5 +13,8 @@
 </head>
 <body>
     <p>New item has been successfully added to the database.</p>
+    <p>You can check this item through this <a th:href="@{/items/{id}(id=${id})}">link</a>.</p>
+    <p>Get look at whole <a href="/items">database</a>.</p>
+    <p>Return to <a href="/">main</a> page.</p>
 </body>
 </html>

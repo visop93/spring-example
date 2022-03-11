@@ -45,11 +45,12 @@ public class ItemController implements WebMvcConfigurer {
 
 //    @PostMapping(value = "/items/add", consumes = { MediaType.ALL_VALUE })
     @PostMapping("/items/add")
-    public String addItem(@Valid  Item item, BindingResult bindingResult) {
+    public String addItem(@Valid  Item item, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()){
             return "itemAddForm";
         }
         repository.save(item);
+        model.addAttribute("id", item.getId());
         return "itemAddPositiveResult";
     }
 
