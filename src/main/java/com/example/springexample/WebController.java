@@ -16,6 +16,6 @@ public class WebController {
     @GetMapping("/")
     public String loadInfo(Model model) {
         model.addAttribute("amount", repository.count());
-        return "test";
+        return "index";
     }
 }

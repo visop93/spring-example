@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Stream;
 
 @Configuration
 public class LoadDatabase {
@@ -30,6 +29,7 @@ public class LoadDatabase {
         };
     }
 
+    //generate lowercase string of letter said length
     private String generateString(int min, int max) {
         return new Random().ints(97, 123)
                 .limit(ThreadLocalRandom.current().nextLong(min, max))
