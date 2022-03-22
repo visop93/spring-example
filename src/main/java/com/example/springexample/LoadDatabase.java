@@ -25,7 +25,7 @@ public class LoadDatabase {
                 itemRepository.save(new Item(generateString(3, 7), generateString(10, 20)));
             }
 
-            itemRepository.findAll().forEach(item -> log.info("Preloaded " + item));
+            itemRepository.findAll().forEach(item -> log.info("Preloaded {}", item));
         };
     }
 

@@ -2,6 +2,7 @@ package com.example.springexample;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +16,7 @@ import java.util.List;
 public class ItemController implements WebMvcConfigurer {
     private static final Logger log = LoggerFactory.getLogger(ItemController.class);
 
+    @Autowired
     private final ItemRepository repository;
 
     public ItemController(ItemRepository repository) {
